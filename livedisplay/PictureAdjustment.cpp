@@ -61,7 +61,7 @@ struct hsic_ranges {
 } // anonymous namespace
 
 namespace vendor {
-namespace lineage {
+namespace mokee {
 namespace livedisplay {
 namespace V2_0 {
 namespace sdm {
@@ -147,7 +147,7 @@ void PictureAdjustment::updateDefaultPictureAdjustment() {
   }
 }
 
-// Methods from ::vendor::lineage::livedisplay::V2_0::IPictureAdjustment follow.
+// Methods from ::vendor::mokee::livedisplay::V2_0::IPictureAdjustment follow.
 Return<void> PictureAdjustment::getHueRange(getHueRange_cb _hidl_cb) {
   FloatRange range{};
   hsic_ranges r{};
@@ -244,7 +244,7 @@ Return<void> PictureAdjustment::getDefaultPictureAdjustment(
 }
 
 Return<bool> PictureAdjustment::setPictureAdjustment(
-    const ::vendor::lineage::livedisplay::V2_0::HSIC &hsic) {
+    const ::vendor::mokee::livedisplay::V2_0::HSIC &hsic) {
   hsic_config config = {0,
                         {static_cast<int32_t>(hsic.hue), hsic.saturation,
                          hsic.intensity, hsic.contrast,
@@ -260,5 +260,5 @@ Return<bool> PictureAdjustment::setPictureAdjustment(
 } // namespace sdm
 } // namespace V2_0
 } // namespace livedisplay
-} // namespace lineage
+} // namespace mokee
 } // namespace vendor

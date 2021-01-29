@@ -13,8 +13,8 @@
 // limitations under the License.
 
 cc_binary {
-    name: "vendor.lineage.touch@1.0-service.xiaomi_mido",
-    init_rc: ["vendor.lineage.touch@1.0-service.xiaomi_mido.rc"],
+    name: "vendor.mokee.touch@1.0-service.xiaomi_mido",
+    init_rc: ["vendor.mokee.touch@1.0-service.xiaomi_mido.rc"],
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
     vendor: true,
@@ -26,7 +26,8 @@ cc_binary {
     shared_libs: [
         "libbase",
         "libhidlbase",
+        "libhidltransport",
         "libutils",
-        "vendor.lineage.touch@1.0",
+        "vendor.mokee.touch@1.0",
     ],
 }

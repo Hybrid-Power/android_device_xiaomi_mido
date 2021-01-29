@@ -17,10 +17,10 @@
 #ifndef VENDOR_LINEAGE_LIVEDISPLAY_V2_0_PICTUREADJUSTMENT_H
 #define VENDOR_LINEAGE_LIVEDISPLAY_V2_0_PICTUREADJUSTMENT_H
 
-#include <vendor/lineage/livedisplay/2.0/IPictureAdjustment.h>
+#include <vendor/mokee/livedisplay/2.0/IPictureAdjustment.h>
 
 namespace vendor {
-namespace lineage {
+namespace mokee {
 namespace livedisplay {
 namespace V2_0 {
 namespace sdm {
@@ -34,7 +34,7 @@ public:
 
   bool isSupported();
 
-  // Methods from ::vendor::lineage::livedisplay::V2_0::IPictureAdjustment
+  // Methods from ::vendor::mokee::livedisplay::V2_0::IPictureAdjustment
   // follow.
   Return<void> getHueRange(getHueRange_cb _hidl_cb) override;
   Return<void> getSaturationRange(getSaturationRange_cb _hidl_cb) override;
@@ -46,7 +46,7 @@ public:
   Return<void>
   getDefaultPictureAdjustment(getDefaultPictureAdjustment_cb _hidl_cb) override;
   Return<bool> setPictureAdjustment(
-      const ::vendor::lineage::livedisplay::V2_0::HSIC &hsic) override;
+      const ::vendor::mokee::livedisplay::V2_0::HSIC &hsic) override;
 
   static void updateDefaultPictureAdjustment();
 
@@ -70,7 +70,7 @@ private:
 } // namespace sdm
 } // namespace V2_0
 } // namespace livedisplay
-} // namespace lineage
+} // namespace mokee
 } // namespace vendor
 
 #endif // VENDOR_LINEAGE_LIVEDISPLAY_V2_0_PICTUREADJUSTMENT_H

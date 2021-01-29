@@ -21,21 +21,24 @@
 #include "GloveMode.h"
 
 namespace vendor {
-namespace lineage {
+namespace mokee {
 namespace touch {
 namespace V1_0 {
 namespace implementation {
 
-GloveMode::GloveMode() {
-}
-
 constexpr const char kControlPath[] = "/sys/class/tp_glove/device/glove_enable";
 
-// Methods from ::vendor::lineage::touch::V1_0::IGloveMode follow.
+GloveMode::GloveMode() {
+    mHasGloveMode = !access(kControlPath, F_OK);
+}
+
+// Methods from ::vendor::mokee::touch::V1_0::IGloveMode follow.
 Return<bool> GloveMode::isEnabled() {
     std::string buf;
 
-if (!android::base::ReadFileToString(kControlPath, &buf, true)) {
+    if (!mHasGloveMode) return false;
+
+    if (!android::base::ReadFileToString(kControlPath, &buf, true)) {
         LOG(ERROR) << "Failed to read " << kControlPath;
         return false;
     }
@@ -44,7 +47,8 @@ if (!android::base::ReadFileToString(kControlPath, &buf, true)) {
 }
 
 Return<bool> GloveMode::setEnabled(bool enabled) {
-    
+    if (!mHasGloveMode) return false;
+
     if (!android::base::WriteStringToFile((enabled ? "1" : "0"), kControlPath, true)) {
         LOG(ERROR) << "Failed to write " << kControlPath;
         return false;
@@ -56,5 +60,5 @@ Return<bool> GloveMode::setEnabled(bool enabled) {
 }  // namespace implementation
 }  // namespace V1_0
 }  // namespace touch
-}  // namespace lineage
+}  // namespace mokee
 }  // namespace vendor
