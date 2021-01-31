@@ -27,14 +27,14 @@ cc_defaults {
         "libdl",
         "libhidlbase",
         "libutils",
-        "vendor.lineage.livedisplay@2.0",
+        "vendor.mokee.livedisplay@2.0",
     ],
 }
 
 cc_binary {
-    name: "vendor.lineage.livedisplay@2.0-service.xiaomi_mido",
-    init_rc: ["vendor.lineage.livedisplay@2.0-service.xiaomi_mido.rc"],
-    vintf_fragments: ["vendor.lineage.livedisplay@2.0-service.xiaomi_mido.xml"],
+    name: "vendor.mokee.livedisplay@2.0-service.xiaomi_mido",
+    init_rc: ["vendor.mokee.livedisplay@2.0-service.xiaomi_mido.rc"],
+    vintf_fragments: ["vendor.mokee.livedisplay@2.0-service.xiaomi_mido.xml"],
     defaults: ["livedisplay_mido_defaults"],
     vendor: true,
 }

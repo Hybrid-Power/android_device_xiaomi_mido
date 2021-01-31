@@ -16,7 +16,7 @@
 
 #include <dlfcn.h>
 
-#define LOG_TAG "vendor.lineage.livedisplay@2.0-service.xiaomi_mido"
+#define LOG_TAG "vendor.mokee.livedisplay@2.0-service.xiaomi_mido"
 
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>
@@ -30,7 +30,7 @@ using android::status_t;
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
-using ::vendor::lineage::livedisplay::V2_0::sdm::PictureAdjustment;
+using ::vendor::mokee::livedisplay::V2_0::sdm::PictureAdjustment;
 
 int main() {
   // Vendor backend
