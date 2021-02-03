@@ -255,7 +255,7 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.mokee.livedisplay@2.0-service-sdm
+    vendor.mokee.livedisplay@2.0-service.xiaomi_mido
 
 # Media
 PRODUCT_COPY_FILES += \
