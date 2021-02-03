@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef VENDOR_LINEAGE_LIVEDISPLAY_V2_0_PICTUREADJUSTMENT_H
-#define VENDOR_LINEAGE_LIVEDISPLAY_V2_0_PICTUREADJUSTMENT_H
+#ifndef VENDOR_MOKEE_LIVEDISPLAY_V2_0_PICTUREADJUSTMENT_H
+#define VENDOR_MOKEE_LIVEDISPLAY_V2_0_PICTUREADJUSTMENT_H
 
 #include <vendor/mokee/livedisplay/2.0/IPictureAdjustment.h>
 
@@ -73,4 +73,4 @@ private:
 } // namespace mokee
 } // namespace vendor
 
-#endif // VENDOR_LINEAGE_LIVEDISPLAY_V2_0_PICTUREADJUSTMENT_H
+#endif // VENDOR_MOKEE_LIVEDISPLAY_V2_0_PICTUREADJUSTMENT_H
