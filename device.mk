@@ -377,8 +377,8 @@ PRODUCT_PACKAGES += \
     vendor.mokee.touch@1.0-service.xiaomi_mido
 
 # Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.mokee.trust@1.0-service
+#PRODUCT_PACKAGES += \
+#    vendor.mokee.trust@1.0-service
 
 # USB HAL
 PRODUCT_PACKAGES += \
