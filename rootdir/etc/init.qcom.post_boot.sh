@@ -5956,7 +5956,7 @@ case "$console_config" in
 esac
 
 # Screen change color
-echo '256 256 200' >/sys/devices/platform/kcal_ctrl.0/kcal 
+#echo '256 256 200' >/sys/devices/platform/kcal_ctrl.0/kcal 
 
 # Parse misc partition path and set property
 misc_link=$(ls -l /dev/block/bootdevice/by-name/misc)
