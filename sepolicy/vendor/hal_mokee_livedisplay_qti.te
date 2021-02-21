@@ -1,3 +1,4 @@
 #============= hal_mokee_livedisplay_qti ==============
 # Allow LiveDisplay access to pps socket
 unix_socket_connect(hal_mokee_livedisplay_qti, pps, mm-pp-daemon)
+r_dir_file(hal_mokee_livedisplay_sysfs, sysfs_graphics)
