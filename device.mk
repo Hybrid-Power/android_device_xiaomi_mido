@@ -19,7 +19,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-mokee
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
@@ -31,6 +30,9 @@ TARGET_SCREEN_WIDTH := 1080
 
 # RRO (Runtime Resource Overlay)
 PRODUCT_ENFORCE_RRO_TARGETS := *
+
+# Qcom soong namespace
+QCOM_SOONG_NAMESPACE := hardware/qcom-caf/msm8996-r
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -93,7 +95,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@6.0-impl:32 \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio@2.0-impl:32 \
-    android.hardware.soundtrigger@2.2-impl:32 \
     audio.a2dp.default \
     audio.bluetooth.default \
     audio.primary.msm8953 \
@@ -271,7 +272,7 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.mokee.livedisplay@2.0-service.xiaomi_mido
+    vendor.lineage.livedisplay@2.0-service.xiaomi_mido
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -374,11 +375,11 @@ PRODUCT_PACKAGES += \
 
 # Touch features
 PRODUCT_PACKAGES += \
-    vendor.mokee.touch@1.0-service.xiaomi_mido
+    vendor.lineage.touch@1.0-service.xiaomi_mido
 
 # Trust HAL
-#PRODUCT_PACKAGES += \
-#    vendor.mokee.trust@1.0-service
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
 
 # USB HAL
 PRODUCT_PACKAGES += \

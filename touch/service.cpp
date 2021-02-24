@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.mokee.touch@1.0-service.xiaomi_mido"
+#define LOG_TAG "vendor.lineage.touch@1.0-service.xiaomi_mido"
 
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
 
 #include "GloveMode.h"
-#include "KeyDisabler.h"
 
 using android::OK;
 using android::sp;
@@ -28,14 +27,11 @@ using android::status_t;
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
-using ::vendor::mokee::touch::V1_0::IGloveMode;
-using ::vendor::mokee::touch::V1_0::implementation::GloveMode;
-using ::vendor::mokee::touch::V1_0::IKeyDisabler;
-using ::vendor::mokee::touch::V1_0::implementation::KeyDisabler;
+using ::vendor::lineage::touch::V1_0::IGloveMode;
+using ::vendor::lineage::touch::V1_0::implementation::GloveMode;
 
 int main() {
     sp<IGloveMode> gloveMode;
-    sp<KeyDisabler> keyDisabler;
     status_t status;
 
     LOG(INFO) << "Touch HAL service is starting.";
@@ -46,24 +42,11 @@ int main() {
         goto shutdown;
     }
 
-    keyDisabler = new KeyDisabler();
-    if (keyDisabler == nullptr) {
-        LOG(ERROR) << "Can not create an instance of Touch HAL KeyDisabler Iface, exiting.";
-        goto shutdown;
-    }
-
     configureRpcThreadpool(2, true /*callerWillJoin*/);
 
     status = gloveMode->registerAsService();
     if (status != OK) {
         LOG(ERROR) << "Could not register service for Touch HAL GloveMode Iface ("
-                   << status << ")";
-        goto shutdown;
-    }
-
-    status = keyDisabler->registerAsService();
-    if (status != OK) {
-        LOG(ERROR) << "Could not register service for Touch HAL KeyDisabler Iface ("
                    << status << ")";
         goto shutdown;
     }

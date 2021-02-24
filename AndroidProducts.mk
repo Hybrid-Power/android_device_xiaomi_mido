@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/mokee_mido.mk
+    $(LOCAL_DIR)/aosp_mido.mk
 
 COMMON_LUNCH_CHOICES := \
-    mokee_mido-user \
-    mokee_mido-userdebug \
-    mokee_mido-eng
+    aosp_mido-user \
+    aosp_mido-userdebug \
+    aosp_mido-eng
